@@ -105,3 +105,4 @@ C:\Repo2\QuipuTask\Quipu\obj\Debug\Quipu.exe.manifest
 C:\Repo2\QuipuTask\Quipu\obj\Debug\Quipu.application
 C:\Repo2\QuipuTask\Quipu\obj\Debug\Quipu.exe
 C:\Repo2\QuipuTask\Quipu\obj\Debug\Quipu.pdb
+C:\Repo2\QuipuTask\Quipu\obj\Debug\Quipu.csprojResolveAssemblyReference.cache
