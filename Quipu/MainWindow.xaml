@@ -1,0 +1,59 @@
+﻿<Window x:Class="Quipu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quipu"
+        
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:GalaSoft_MvvmLight_Command="http://www.galasoft.ch/mvvmlight"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="1" Grid.Column="1" Content="Load link" Command ="{Binding LoadLinkCommand}" Width="80" Margin="10" />
+
+        <Label Grid.Row="2" Grid.Column="1" Content="Tag name" Margin="10"/>
+        <Label Grid.Row="2" Grid.Column="2" Content="Link" Margin="10"/>
+        <Label Grid.Row="2" Grid.Column="3" Content="Count" Margin="10"/>
+
+        <TextBox Grid.Row="3" Grid.Column="1"  Text="{Binding Tag, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="10"/>
+        <TextBox Grid.Row="3" Grid.Column="2"  Text="{Binding Link, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="10"/>
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="{Binding Count}" Width="50" Margin="10"/>
+
+        <Button Grid.Row="4" Grid.Column="1" Content="Run" Command ="{Binding CountCommand}" Width="80" Margin="10" />
+
+
+        <ProgressBar Grid.Row="4" Grid.Column="2" IsIndeterminate="{Binding IsProgress}"  Height="20" Width="200" Margin="10"/>
+
+        <StatusBar Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">                                                        
+            <TextBlock Text="{Binding Message}" Name="txtMessage"/>
+        </StatusBar>
+
+
+    </Grid>
+</Window>
